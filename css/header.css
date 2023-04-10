@@ -1,0 +1,28 @@
+/* ------------------------HEADER---------------- */
+
+.container_header {
+   background-color: bisque; 
+}
+
+.logo{
+    
+}
+
+.logo_thumb{
+     display: flex;
+}
+
+.logo_title{
+    color: blue;
+}
+
+.logo{
+  content: '';
+  background-size: 100%;
+  background-image: url('../img/crystal.svg');
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 10px;
+  display: block;
+}
+
