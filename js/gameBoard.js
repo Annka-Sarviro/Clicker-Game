@@ -4,6 +4,7 @@ import getRandomInt from "./helpers/random.js"
 import showOff from "./helpers/shoOff.js"
 import showOn from "./helpers/showOn.js"
 import progress from "./progressBar.js"
+import scoreModal from "./scoreModal.js"
 
 const user = JSON.parse(localStorage.getItem('user'));
 const userName = user?.name || 'User'
@@ -13,6 +14,8 @@ let yellowCount = 0
 let stopGame = [false, false,false]
 let currLevel = 1
 let levelCurrData = levelAllData[currLevel-1]
+let intervalRedId,intervalYellowId,intervalBlueId; 
+let score = 0
 
 const list =
      `
@@ -27,26 +30,45 @@ function renderList () {
     refs.gameDesk.innerHTML = '';
     refs.gameDesk.insertAdjacentHTML('beforeend', list)
     refs.userName.textContent = `${userName}`
-    startShowElem(showElements)  
+    progress(levelCurrData)
+    refs.startBtn.addEventListener('click', startPlaying);
+    refs.stopBtn.addEventListener('click', endGame);
+    refs.stopBtn.disabled = true
 }
 
+function endGame () {
+    refs.startBtn.disabled = false
+     refs.stopBtn.disabled = true
+    clearInterval(intervalRedId); 
+    clearInterval(intervalYellowId);
+    clearInterval(intervalBlueId);
+     redCount = 0
+    blueCount = 0
+    yellowCount = 0
+    refs.redCount.textContent = `0`
+    refs.blueCount.textContent = `0`
+    refs.yellowCount.textContent = `0`
+    currLevel = 1
+   renderList ()
+}
+   
 
-function startShowElem (showElements) {
+function startShowElem ( showElements) {
     redCount = 0
     blueCount = 0
     yellowCount = 0
+     refs.redCount.textContent = `0`
+        refs.blueCount.textContent = `0`
+        refs.yellowCount.textContent = `0`
     progress(levelCurrData)
-    let buttonStart = document.createElement('button');
-    buttonStart.textContent = 'start';
-    document.body.appendChild(buttonStart);
-   
-    buttonStart.addEventListener('click', startPlaying);
+    startPlaying()
     
 }
 
 
-let intervalRedId,intervalYellowId,intervalBlueId; 
 function startPlaying() {
+    refs.startBtn.disabled = true 
+    refs.stopBtn.disabled = false
     let delayRed = getRandomInt(levelCurrData.timeIntervalRed[0], levelCurrData.timeIntervalRed[1])
     let delayBlue = getRandomInt(levelCurrData.timeIntervalBlue[0], levelCurrData.timeIntervalBlue[1])
     let delayYellow = getRandomInt(levelCurrData.timeIntervalYellow[0], levelCurrData.timeIntervalYellow[1])
@@ -77,11 +99,10 @@ function stopPlaying() {
     clearInterval(intervalYellowId);
     clearInterval(intervalBlueId);
     clikElem.innerHTML = '';
-
-    if(currLevel<6) {
-        startShowElem(showElements)} else {console.log('end')}    
+    score += redCount + blueCount + yellowCount
+    console.log(score)
+    scoreModal(startShowElem ,currLevel)  
 }
-
 
 function showElements (clikElem) {
     let delay = getRandomInt(500, levelCurrData.timeIntervalRed[1])
@@ -112,8 +133,7 @@ function scorePlus (e) {
         currLevel+=1 
         levelCurrData = levelAllData[currLevel-1] || null
         stopGame= [false, false,false]
-        console.log(redCount, levelCurrData, stopGame)
-      stopPlaying()
+        stopPlaying()
     }
       
    showOff(e.target)

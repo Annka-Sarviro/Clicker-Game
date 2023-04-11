@@ -23,8 +23,12 @@
             <button type="button" class="user_logOut">LogOut</button>
         </div>
     </header>
+
+
     <main><div class="container container_main">
+        <div class="backdrop is-hidden scoreModal_backdrop"></div>
         <div class="backdrop is-hidden">
+            
             <div class="modal">
                 <h2 class="modal_title">
                     WellCome!
@@ -32,7 +36,7 @@
                 <h3>Please registry for playing</h3>
                 <form action="#" method="#" id="form">
                     <div>
-                        <label>
+                        <label>a
                         Name:
                         <input type="text" name="name" placeholder="Your name">
                         </label>
@@ -65,7 +69,10 @@
             </div>
         </div>
         <div class="gameBoard">
-            <div class="levelImg"></div>
+            <div class="levelImg">
+                <button type="button" class="start_button">Start</button>
+                <button type="button" class="stop_button">Stop</button>
+            </div>
             <div class="gameDesk"></div>
             <div class="progressBar"></div>
         </div>
