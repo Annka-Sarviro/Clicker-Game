@@ -1,0 +1,33 @@
+/* ---------ProgressBar------------ */
+.progressBar{
+    display: grid;
+    grid-template-columns: repeat(3, 10px);
+    gap: 12px;
+}
+.progress {
+    box-sizing: border-box;
+    height: 300px;
+    width: 10px;
+    border: solid 2px var(--color-dark-3xl);
+    position: relative;
+    overflow: hidden;
+    
+}
+.progress_color{
+    background-color: red;
+    height: 0px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+}
+
+.progress_red{
+    background-color: var(--red-color);
+}
+.progress_blue{
+    background-color: var(--blue-color);
+}
+.progress_yellow{
+    background-color: var(--yellow-color);
+}

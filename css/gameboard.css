@@ -1,0 +1,31 @@
+/* --------------Gameboard---------- */
+.gameBoard{
+    display: grid;
+    grid-template-columns: 1fr 500px 1fr;
+}
+
+.desk{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background-color: var(--color-dark-s);
+}
+.clikElem{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0;
+    height: 0;
+}
+
+.clikElem_Red{
+     background-color: var(--red-color);
+}
+
+.clikElem_Blue{
+     background-color: var(--blue-color);
+}
+
+.clikElem_Yellow{
+     background-color: var(--yellow-color);
+}

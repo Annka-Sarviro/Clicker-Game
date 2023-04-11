@@ -16,18 +16,55 @@
                 <span class="logo"></span>
                 <h1 class="logo_title">Magic Cristall</h1>
             </div>
+
+            <div class="user">
+                <p >Hello, <span class="user_name"> </span> </p>
+            </div>
+            <button type="button" class="user_logOut">LogOut</button>
         </div>
     </header>
     <main><div class="container container_main">
+        <div class="backdrop is-hidden">
+            <div class="modal">
+                <h2 class="modal_title">
+                    WellCome!
+                </h2>
+                <h3>Please registry for playing</h3>
+                <form action="#" method="#" id="form">
+                    <div>
+                        <label>
+                        Name:
+                        <input type="text" name="name" placeholder="Your name">
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                        e-mail:
+                        <input type="email" name="email" placeholder="Your e-mail" required>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                        Password:
+                        <input type="password" name="password" placeholder="Your password" required>
+                        </label>
+                    </div>
+                    
+                    <div>
+                        <button type="button" class="button button_modal-submit" button_modal-submit>Register</button>
+                    </div>
+                </form>                                    
+            </div>
+        </div>
         <div class="levelTaskBoard">
             <p>Level 1</p>
             <div class="task">
-                <p>5 red</p>
-                <p>7 blue</p>
-                <p>6 yellow</p>
+                <p class="task_red"> <span class="task_red_count">0</span>  red</p>
+                <p class="task_blue"><span class="task_blue_count">0</span> blue</p>
+                <p class="task_yellow"><span class="task_yellow_count">0</span> yellow</p>
             </div>
         </div>
-        <div class="gameboard">
+        <div class="gameBoard">
             <div class="levelImg"></div>
             <div class="gameDesk"></div>
             <div class="progressBar"></div>
@@ -41,5 +78,6 @@
     
     </footer>
     <script src="./index.js" type="module"></script>
+
 </body>
 </html>
