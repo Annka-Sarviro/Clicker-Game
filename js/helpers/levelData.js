@@ -45,7 +45,7 @@ const level5 = {
     blueCountFinish: 2,
     yellowCountFinish: 2, 
     elemSize: 20,
-    ttimeIntervalRed: [1000, 3000],
+    timeIntervalRed: [1000, 3000],
     timeIntervalBlue: [2000, 3000],
     timeIntervalYellow: [1000, 3000]
 }

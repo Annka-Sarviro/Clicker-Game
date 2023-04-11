@@ -32,10 +32,10 @@ function renderList () {
 
 
 function startShowElem (showElements) {
-     progress(currLevel)
     redCount = 0
     blueCount = 0
     yellowCount = 0
+    progress(levelCurrData)
     let buttonStart = document.createElement('button');
     buttonStart.textContent = 'start';
     document.body.appendChild(buttonStart);
@@ -77,7 +77,7 @@ function stopPlaying() {
     clearInterval(intervalYellowId);
     clearInterval(intervalBlueId);
     clikElem.innerHTML = '';
-   
+
     if(currLevel<6) {
         startShowElem(showElements)} else {console.log('end')}    
 }
@@ -110,8 +110,7 @@ function scorePlus (e) {
         refs.blueCount.textContent = `0`
         refs.yellowCount.textContent = `0`
         currLevel+=1 
-         progress(currLevel)
-        levelCurrData = levelAllData[currLevel-1]
+        levelCurrData = levelAllData[currLevel-1] || null
         stopGame= [false, false,false]
         console.log(redCount, levelCurrData, stopGame)
       stopPlaying()
