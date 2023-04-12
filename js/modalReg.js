@@ -43,7 +43,7 @@ function rendermodalList () {
 }
 
 if(!user) {
-    // rendermodalList ()
+    rendermodalList ()
    modalOpen(refs.modalRegBackdrop)  
    
 }
