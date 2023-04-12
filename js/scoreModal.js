@@ -1,12 +1,14 @@
 import refs from "./helpers/refs.js"
+import finishGameModal  from "./finishGameModal.js"
+function scoreModal  (startShowElem,currLevel,  score, timeFinish, totalTime, endGame) {
 
-function scoreModal  (startShowElem, currLevel ) {
-const modal = `
+    const modal = `
     <div class="backdrop scoreModal">
         <div class="modal">
-            <p>Level <span class="level_name">1</span> end</p>
-            <p>Your count: <span class="modal_count">90</span></p>
-            <button class="button button_startLevel" type="button">Start <span class="level_name">2</span> level</button>
+            <p>Level <span class="level_name">${currLevel-1}</span> end</p>
+            <p>Your count: <span class="modal_count">${score}</span></p>
+            <p>Your time: <span class="modal_time">${timeFinish.toFixed(1)}</span> sec</p>
+            <button class="button button_startLevel" type="button">Start <span class="level_name">${currLevel}</span> level</button>
         </div>
         
     </div>`
@@ -24,9 +26,14 @@ function renderList () {
     
         function onStartLevel () {
             refs.scoreModalBackdrop?.classList.add('is-hidden')
+            refs.scoreModalBackdrop.innerHTML = ''
             startShowElem()       
         }
-    } else {console.log('end')}
+    } else {
+        refs.scoreModalBackdrop?.classList.add('is-hidden')
+        refs.scoreModalBackdrop.innerHTML = ''
+        
+        finishGameModal(score, totalTime.toFixed(1), endGame)}
 }
 
 renderList ()}

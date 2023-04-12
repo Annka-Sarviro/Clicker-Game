@@ -20,65 +20,44 @@
             <div class="user">
                 <p >Hello, <span class="user_name"> </span> </p>
             </div>
-            <button type="button" class="user_logOut">LogOut</button>
+            <button type="button" class="user_logOut is-hidden">LogOut</button>
         </div>
     </header>
 
 
     <main><div class="container container_main">
         <div class="backdrop is-hidden scoreModal_backdrop"></div>
-        <div class="backdrop is-hidden">
-            
-            <div class="modal">
-                <h2 class="modal_title">
-                    WellCome!
-                </h2>
-                <h3>Please registry for playing</h3>
-                <form action="#" method="#" id="form">
-                    <div>
-                        <label>a
-                        Name:
-                        <input type="text" name="name" placeholder="Your name">
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                        e-mail:
-                        <input type="email" name="email" placeholder="Your e-mail" required>
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                        Password:
-                        <input type="password" name="password" placeholder="Your password" required>
-                        </label>
-                    </div>
-                    
-                    <div>
-                        <button type="button" class="button button_modal-submit" button_modal-submit>Register</button>
-                    </div>
-                </form>                                    
-            </div>
-        </div>
+        <div class="backdrop is-hidden modalReg_backdrop"></div>
+        <div class="backdrop is-hidden finishGame_backdrop"></div>
+        
         <div class="levelTaskBoard">
-            <p>Level 1</p>
-            <div class="task">
-                <p class="task_red"> <span class="task_red_count">0</span>  red</p>
-                <p class="task_blue"><span class="task_blue_count">0</span> blue</p>
-                <p class="task_yellow"><span class="task_yellow_count">0</span> yellow</p>
-            </div>
+            <h2>You level <span class="levelTaskBoard_title-task">1</span>  task:</h2>
+            <ul class="levelTaskBoard_task">
+                <li class="levelTaskBoard_color levelTaskBoard_color_red">Red: </li>
+                <li class="levelTaskBoard_color levelTaskBoard_color_blue">Blue: </li>
+                <li class="levelTaskBoard_color levelTaskBoard_color_yellow">Yellow: </li>
+            </ul>
         </div>
         <div class="gameBoard">
             <div class="levelImg">
+                <p class="level_task">Level 1</p>
+                <div class="task">
+                    <ul>
+                        <li class="task_red"> <span class="task_red_count">0</span>  red</li>
+                        <li class="task_blue"><span class="task_blue_count">0</span> blue</li>
+                        <li class="task_yellow"><span class="task_yellow_count">0</span> yellow</li>
+                    </ul>
+               
+            </div>
                 <button type="button" class="start_button">Start</button>
                 <button type="button" class="stop_button">Stop</button>
             </div>
             <div class="gameDesk"></div>
             <div class="progressBar"></div>
         </div>
-        <div class="scoarBoard">
-            <div class="timer">Time</div>
-            <div class="score">Score</div>
+        <div class="scoreBoard">
+            <div class="scoreBoard_subitle">Time: <span class="scoreBoard_timer">0</span> </div>
+            <div class="scoreBoard_subitle">Total score: <span class="scoreBoard_score">0</span></div>
         </div>
     </div></main>
     <footer><div class="container container_footer"></div>

@@ -4,16 +4,59 @@ import refs from "./helpers/refs.js"
 
 const user = JSON.parse(localStorage?.getItem('user'));
 
-refs.buttonModalSubmit.addEventListener('click', onRegFornSubmit)
+const regForm = `
+    <div class="modal">
+                <h2 class="modal_title">
+                    WellCome!
+                </h2>
+                <h3>Please registry for playing</h3>
+                <form action="#" method="#" id="form">
+                    <div>
+                        <label>
+                        Name:
+                        <input type="text" name="name" placeholder="Your name">
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                        e-mail:
+                        <input type="email" name="email" placeholder="Your e-mail" required>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                        Password:
+                        <input type="password" name="password" placeholder="Your password" required>
+                        </label>
+                    </div>
+                    
+                    <div>
+                        <button type="button" class="button button_modal-submit">Register</button>
+                    </div>
+                </form>`
+
+function rendermodalList () {
+    refs.modalRegBackdrop.innerHTML = ''
+    refs.modalRegBackdrop.insertAdjacentHTML('beforeend', regForm)
+    const buttonModalSubmit = document.querySelector('.button_modal-submit')
+    buttonModalSubmit.addEventListener('click', onRegFornSubmit)
+}
 
 if(!user) {
-   modalOpen(refs.backdrop)  
+    // rendermodalList ()
+   modalOpen(refs.modalRegBackdrop)  
+   
 }
 
 if(user) {
-   refs.userLogOut.style.display = `block`
-   refs.userLogOut.addEventListener('click', onLogout)    
+    refs.userLogOut.classList.remove('is-hidden')
+    console.log(refs.userLogOut)
+    refs.userLogOut.addEventListener('click', onLogout)  
+      
 }
+
+
+
 const userData = {};
 
 function onRegFornSubmit (e) {
@@ -42,14 +85,17 @@ function onRegFornSubmit (e) {
     if(formFeel) {
         refs.userName.textContent = `${userData.name}`
         localStorage.setItem('user', JSON.stringify(userData));
-        refs.userLogOut.style.display = `block`
-        modalClose(refs.backdrop)        
+        refs.userLogOut.classList.remove('is-hidden')
+        modalClose(refs.modalRegBackdrop)        
     }  
 }
 
 function onLogout () {
+    
     localStorage.removeItem('user');
     refs.userName.textContent = `User`
-    refs.userLogOut.style.display = `none`
-    modalOpen(refs.backdrop)
+    refs.userLogOut?.classList.add('is-hidden')
+    rendermodalList () 
+    modalOpen(refs.modalRegBackdrop)    
 }
+

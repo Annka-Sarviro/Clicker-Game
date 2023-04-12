@@ -1,0 +1,13 @@
+/* ----------------levelTaskBoard--------------- */
+
+.levelTaskBoard{
+    display: flex;
+}
+
+.levelTaskBoard_task{
+    display: flex;
+}
+
+.levelTaskBoard_color:not(:last-child) {
+    margin-right: 20px;
+}
