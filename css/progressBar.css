@@ -1,33 +1,95 @@
-/* ---------ProgressBar------------ */
-.progressBar{
-    display: grid;
-    grid-template-columns: repeat(3, 10px);
-    gap: 12px;
+/* ------------------ProgressBar----------------- */
+.progressBar {
+  display: grid;
+  grid-template-columns: repeat(3, 50px);
+  gap: 30px;
+  position: relative;
 }
 .progress {
-    box-sizing: border-box;
-    height: 300px;
-    width: 10px;
-    border: solid 2px var(--color-dark-3xl);
-    position: relative;
-    overflow: hidden;
-    
+  box-sizing: border-box;
+  height: 524px;
+  width: 50px;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  position: relative;
+  overflow: hidden;
 }
-.progress_color{
-    background-color: red;
-    height: 0px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 10px;
+.progress_color {
+  height: 0px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
 }
 
-.progress_red{
-    background-color: var(--red-color);
+.progress_green {
+  background-color: var(--green-color);
 }
-.progress_blue{
-    background-color: var(--blue-color);
+
+.progress_green::before {
+  display: block;
+  content: '';
+  width: 40px;
+  height: 40px;
+  background-image: url('../img/green.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -37px;
+  z-index: 1;
 }
-.progress_yellow{
-    background-color: var(--yellow-color);
+
+.progress_blue {
+  background-color: var(--blue-color);
+}
+
+.progress_blue::before {
+  display: block;
+  content: '';
+  width: 40px;
+  height: 40px;
+  background-image: url('../img/blue.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -37px;
+  z-index: 1;
+}
+
+.progress_yellow {
+  background-color: var(--yellow-color);
+}
+
+.progress_yellow::before {
+  display: block;
+  content: '';
+  width: 40px;
+  height: 40px;
+  background-image: url('../img/yellow.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -37px;
+  z-index: 1;
+}
+
+.endProgress_img {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+}
+
+.green_img.endProgress_img {
+  top: -37px;
+  left: 3px;
+}
+
+.blue_img.endProgress_img {
+  top: -37px;
+  left: 86px;
+}
+
+.yellow_img.endProgress_img {
+  top: -40px;
+  left: 172px;
 }

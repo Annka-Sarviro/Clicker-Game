@@ -11,13 +11,13 @@ import levelTaskBoard from './levelTaskBoard.js';
 
 const user = JSON.parse(localStorage.getItem('user'));
 const userName = user?.name || 'User';
-let redCount = 0;
+let greenCount = 0;
 let blueCount = 0;
 let yellowCount = 0;
 let stopGame = [false, false, false];
 let currLevel = 1;
 let levelCurrData = levelAllData[currLevel - 1];
-let intervalRedId, intervalYellowId, intervalBlueId, intervalId;
+let intervalGreenId, intervalYellowId, intervalBlueId, intervalId;
 let score = 0;
 let totalTime = 0;
 let timeStart;
@@ -25,9 +25,9 @@ let timeFinish;
 
 const list = `
     <div class="desk">
-        <div class="clikElem clikElem_Red"></div>
-        <div class="clikElem clikElem_Blue"></div>
-        <div class="clikElem clikElem_Yellow"></div>
+        <div class="green_img clikElem clikElem_green"></div>
+        <div class="blue_img clikElem clikElem_Blue"></div>
+        <div class="yellow_img clikElem clikElem_Yellow"></div>
         </div>`;
 
 function renderList() {
@@ -46,18 +46,18 @@ function endGame() {
   refs.startBtn.disabled = false;
   refs.stopBtn.disabled = true;
   refs.userLogOut.disabled = false;
-  clearInterval(intervalRedId);
+  clearInterval(intervalGreenId);
   clearInterval(intervalYellowId);
   clearInterval(intervalBlueId);
   clearInterval(intervalId);
-  redCount = 0;
+  greenCount = 0;
   blueCount = 0;
   yellowCount = 0;
   score = 0;
   timeStart = 0;
   refs.scoreBoardTimer.textContent = `0`;
   refs.scoreBoaradScore.textContent = `0`;
-  refs.redCount.textContent = `0`;
+  refs.greenCount.textContent = `0`;
   refs.blueCount.textContent = `0`;
   refs.yellowCount.textContent = `0`;
   currLevel = 1;
@@ -66,10 +66,10 @@ function endGame() {
 }
 
 function startShowElem(showElements) {
-  redCount = 0;
+  greenCount = 0;
   blueCount = 0;
   yellowCount = 0;
-  refs.redCount.textContent = `0`;
+  refs.greenCount.textContent = `0`;
   refs.blueCount.textContent = `0`;
   refs.yellowCount.textContent = `0`;
   progress(levelCurrData);
@@ -83,7 +83,10 @@ function startPlaying() {
   refs.stopBtn.disabled = false;
   refs.userLogOut.disabled = true;
   timeStart = Date.now();
-  let delayRed = getRandomInt(levelCurrData.timeIntervalRed[0], levelCurrData.timeIntervalRed[1]);
+  let delayGreen = getRandomInt(
+    levelCurrData.timeIntervalGreen[0],
+    levelCurrData.timeIntervalGreen[1]
+  );
   let delayBlue = getRandomInt(
     levelCurrData.timeIntervalBlue[0],
     levelCurrData.timeIntervalBlue[1]
@@ -93,11 +96,11 @@ function startPlaying() {
     levelCurrData.timeIntervalYellow[1]
   );
 
-  const clikRedElem = document.querySelector('.clikElem_Red');
+  const clikGreenElem = document.querySelector('.clikElem_green');
   const clikBlueElem = document.querySelector('.clikElem_Blue');
   const clikYellowElem = document.querySelector('.clikElem_Yellow');
 
-  clikRedElem.addEventListener('click', scorePlus);
+  clikGreenElem.addEventListener('click', scorePlus);
   clikBlueElem.addEventListener('click', scorePlus);
   clikYellowElem.addEventListener('click', scorePlus);
 
@@ -107,9 +110,9 @@ function startPlaying() {
     refs.scoreBoardTimer.textContent = `${time.toFixed(1)}`;
   }, 500);
 
-  intervalRedId = setInterval(function () {
-    showElements(clikRedElem);
-  }, delayRed);
+  intervalGreenId = setInterval(function () {
+    showElements(clikGreenElem);
+  }, delayGreen);
 
   intervalBlueId = setInterval(function () {
     showElements(clikBlueElem);
@@ -123,7 +126,7 @@ function startPlaying() {
 function stopPlaying() {
   const clikElem = document.querySelector('.clikElem');
   refs.userLogOut.disabled = false;
-  clearInterval(intervalRedId);
+  clearInterval(intervalGreenId);
   clearInterval(intervalYellowId);
   clearInterval(intervalBlueId);
   clearInterval(intervalId);
@@ -133,7 +136,7 @@ function stopPlaying() {
 }
 
 function showElements(clikElem) {
-  let delay = getRandomInt(500, levelCurrData.timeIntervalRed[1]);
+  let delay = getRandomInt(500, levelCurrData.timeIntervalGreen[1]);
   showOn(clikElem, levelCurrData.elemSize);
 
   setTimeout(function () {
@@ -142,8 +145,8 @@ function showElements(clikElem) {
 }
 
 function scorePlus(e) {
-  if (e.currentTarget.matches('.clikElem_Red')) {
-    redCount += 1;
+  if (e.currentTarget.matches('.clikElem_green')) {
+    greenCount += 1;
     score += 1;
   }
   if (e.currentTarget.matches('.clikElem_Blue')) {
@@ -156,7 +159,7 @@ function scorePlus(e) {
   }
 
   refs.scoreBoaradScore.textContent = `${score}`;
-  if (redCount === levelCurrData.redCountFinish) {
+  if (greenCount === levelCurrData.greenCountFinish) {
     stopGame[0] = true;
   }
   if (blueCount === levelCurrData.blueCountFinish) {
@@ -167,7 +170,7 @@ function scorePlus(e) {
   }
 
   if (stopGame.every(item => item === true)) {
-    refs.redCount.textContent = `0`;
+    refs.greenCount.textContent = `0`;
     refs.blueCount.textContent = `0`;
     refs.yellowCount.textContent = `0`;
     currLevel += 1;
@@ -177,7 +180,7 @@ function scorePlus(e) {
   }
 
   showOff(e.target);
-  refs.redCount.textContent = `${redCount}`;
+  refs.greenCount.textContent = `${greenCount}`;
   refs.blueCount.textContent = `${blueCount}`;
   refs.yellowCount.textContent = `${yellowCount}`;
 }

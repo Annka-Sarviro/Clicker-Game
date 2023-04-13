@@ -1,13 +1,37 @@
 /* ----------------levelTaskBoard--------------- */
 
-.levelTaskBoard{
-    display: flex;
+.levelTaskBoard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.levelTaskBoard_task{
-    display: flex;
+.levelTaskBoard_title {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+  margin-right: 42px;
+}
+
+.levelTaskBoard_task {
+  display: flex;
+  align-items: center;
+}
+
+.levelTaskBoard_color {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: centers;
 }
 
 .levelTaskBoard_color:not(:last-child) {
-    margin-right: 20px;
+  margin-right: 40px;
+}
+
+.levelTaskBoard_color_task {
+  display: flex;
+  align-items: center;
 }

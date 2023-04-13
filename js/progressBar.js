@@ -2,18 +2,22 @@ import refs from './helpers/refs.js';
 import getCount from './helpers/getCount.js';
 
 function progress(levelCurrData) {
-  let clickRed = 0;
+  let clickGreen = 0;
   let clickBlue = 0;
   let clickYellow = 0;
 
   refs.gameDesk.addEventListener('click', onReRenderProgress);
 
-  const list = `<div class="progress ">
-        <div class="progress_color progress_red"></div>
+  const list = `
+    <div/ class="green_img endProgress_img is-hidden"> </div>
+    <div class="progress ">
+      <div class="progress_color progress_green"></div>
     </div>
+    <div/ class="blue_img endProgress_img is-hidden"> </div>
     <div class="progress ">
         <div class="progress_color progress_blue"></div>
     </div>
+    <div/ class="yellow_img endProgress_img is-hidden"> </div>
     <div class="progress ">
         <div class="progress_color progress_yellow"></div>
     </div>`;
@@ -27,27 +31,30 @@ function progress(levelCurrData) {
   renderList();
 
   function onReRenderProgress(e) {
+    // document.querySelector('.blue_img.endProgress_img').classList.add('is-hidden');
+    // document.querySelector('.green_img.endProgress_img').classList.add('is-hidden');
+    // document.querySelector('.yellow_img.endProgress_img').classList.add('is-hidden');
     let progressHight = document.querySelector('.progress').offsetHeight;
-    let percentRed = progressHight / levelCurrData.redCountFinish;
+    let percentGreen = progressHight / levelCurrData.greenCountFinish;
     let percentBlue = progressHight / levelCurrData.blueCountFinish;
     let percentYellow = progressHight / levelCurrData.yellowCountFinish;
 
-    if (e.target.matches('.clikElem_Red')) {
-      let height = getCount('.task_red_count') * percentRed;
-      const progressRed = document.querySelector('.progress_red');
-      progressRed.style.height = `${height}px`;
+    if (e.target.matches('.clikElem_green')) {
+      let heightGreen = getCount('.task_green_count') * percentGreen;
+      const progressGreen = document.querySelector('.progress_green');
+      progressGreen.style.height = `${heightGreen}px`;
     }
 
     if (e.target.matches('.clikElem_Blue')) {
-      let height = getCount('.task_blue_count') * percentBlue;
+      let heightBlue = getCount('.task_blue_count') * percentBlue;
       const progressBlue = document.querySelector('.progress_blue');
-      progressBlue.style.height = `${height}px`;
+      progressBlue.style.height = `${heightBlue}px`;
     }
 
     if (e.target.matches('.clikElem_Yellow')) {
-      let height = getCount('.task_yellow_count') * percentYellow;
+      let heightYellow = getCount('.task_yellow_count') * percentYellow;
       const progressYellow = document.querySelector('.progress_yellow');
-      progressYellow.style.height = `${height}px`;
+      progressYellow.style.height = `${heightYellow}px`;
     }
   }
 }

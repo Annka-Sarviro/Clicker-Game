@@ -9,11 +9,11 @@ const refs = {
 
   levelTaskBoard: document.querySelector('.levelTaskBoard'),
   levelTaskBoardTitleTask: document.querySelector('.levelTaskBoard_title-task'),
-  levelTaskBoardColorRed: document.querySelector('.levelTaskBoard_color_red'),
+  levelTaskBoardColorGreen: document.querySelector('.levelTaskBoard_color_green'),
   levelTaskBoardColorBlue: document.querySelector('.levelTaskBoard_color_blue'),
   levelTaskBoardColorYellow: document.querySelector('.levelTaskBoard_color_yellow'),
 
-  redCount: document.querySelector('.task_red_count'),
+  greenCount: document.querySelector('.task_green_count'),
   blueCount: document.querySelector('.task_blue_count'),
   yellowCount: document.querySelector('.task_yellow_count'),
 
@@ -27,7 +27,7 @@ const refs = {
 
   progress: document.querySelector('.progress'),
   progressBar: document.querySelector('.progressBar'),
-  progressRed: document.querySelector('.progress_red'),
+  progressGreen: document.querySelector('.progress_green'),
   progressBlue: document.querySelector('.progress_blue'),
   progressYellow: document.querySelector('.progress_yellow'),
 

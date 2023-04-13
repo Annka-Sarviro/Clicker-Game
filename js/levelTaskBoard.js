@@ -2,9 +2,9 @@ import refs from './helpers/refs.js';
 
 function levelTaskBoard(currLevel, levelCurrData) {
   refs.levelTaskBoardTitleTask.textContent = `${currLevel}`;
-  refs.levelTaskBoardColorRed.textContent = `Red: ${levelCurrData.redCountFinish}`;
-  refs.levelTaskBoardColorBlue.textContent = `Blue: ${levelCurrData.blueCountFinish}`;
-  refs.levelTaskBoardColorYellow.textContent = `Yellow: ${levelCurrData.yellowCountFinish}`;
+  refs.levelTaskBoardColorGreen.textContent = `${levelCurrData.greenCountFinish}`;
+  refs.levelTaskBoardColorBlue.textContent = `${levelCurrData.blueCountFinish}`;
+  refs.levelTaskBoardColorYellow.textContent = `${levelCurrData.yellowCountFinish}`;
 }
 
 export default levelTaskBoard;

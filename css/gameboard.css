@@ -1,31 +1,32 @@
 /* --------------Gameboard---------- */
-.gameBoard{
-    display: grid;
-    grid-template-columns: 1fr 500px 1fr;
+.gameBoard {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
 }
 
-.desk{
-    position: relative;
-    width: 500px;
-    height: 500px;
-    background-color: var(--color-dark-s);
+.desk {
+  position: relative;
+  width: 700px;
+  height: 700px;
+  background-color: var(--color-grey);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
 }
-.clikElem{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 0;
-    height: 0;
-}
-
-.clikElem_Red{
-     background-color: var(--red-color);
-}
-
-.clikElem_Blue{
-     background-color: var(--blue-color);
+.clikElem {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0;
+  height: 0;
 }
 
-.clikElem_Yellow{
-     background-color: var(--yellow-color);
+.clikElem_green {
+}
+
+.clikElem_Blue {
+}
+
+.clikElem_Yellow {
 }

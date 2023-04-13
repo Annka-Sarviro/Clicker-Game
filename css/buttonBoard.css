@@ -1,0 +1,19 @@
+/* ----------------------buttonBoard----------------- */
+
+.buttonBoard {
+  position: absolute;
+  bottom: 0;
+  right: 32px;
+}
+
+.start_button,
+.stop_button {
+  max-width: 147px;
+  max-height: 60px;
+  font-weight: 800;
+  font-size: 28px;
+}
+
+.stop_button {
+  margin-top: 21px;
+}

@@ -49,7 +49,6 @@ if (!user) {
 
 if (user) {
   refs.userLogOut.classList.remove('is-hidden');
-  console.log(refs.userLogOut);
   refs.userLogOut.addEventListener('click', onLogout);
 }
 

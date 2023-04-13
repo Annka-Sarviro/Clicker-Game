@@ -1,28 +1,58 @@
 /* ------------------------HEADER---------------- */
-
+.header {
+  padding-top: 23px;
+}
 .container_header {
-   background-color: bisque; 
+  display: flex;
+  justify-content: space-between;
 }
 
-.logo{
-    
+.logo_thumb {
+  display: flex;
+  align-items: center;
 }
 
-.logo_thumb{
-     display: flex;
+.logo_title {
+  font-weight: 800;
+  font-size: 40px;
+  margin-bottom: 3px;
 }
 
-.logo_title{
-    color: blue;
+.logo_subtitle {
+  font-family: 'Chilanka';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 0.4;
+  letter-spacing: 0.105em;
 }
 
-.logo{
+.logo {
   content: '';
   background-size: 100%;
-  background-image: url('../img/crystal.svg');
+  background-image: url('../img/logo.svg');
   background-repeat: no-repeat;
-  width: 10px;
-  height: 10px;
+  width: 60px;
+  height: 72px;
   display: block;
+  margin-right: 8px;
 }
 
+.user_thumb {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user {
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.user_logOut {
+  border: none;
+  background-color: var(--color-grey);
+  font-size: 16px;
+  padding: 7px 20px;
+  font-weight: 600;
+}

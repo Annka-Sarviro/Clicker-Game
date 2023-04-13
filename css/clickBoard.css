@@ -1,0 +1,78 @@
+/* -------------------------clickBoard---------------- */
+.clickBoard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.level_thumb {
+  width: 210px;
+  padding: 30px 0;
+  text-align: center;
+  border: var(--border);
+  border-radius: var(--border-radius);
+}
+
+.fill {
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+  width: 55px;
+  height: 55px;
+}
+
+.color_green_fill {
+  background-color: var(--green-color);
+}
+
+.color_blue_fill {
+  background-color: var(--blue-color);
+}
+
+.color_yellow_fill {
+  background-color: var(--yellow-color);
+}
+
+.level_task {
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.task_color {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.task_color:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.clickBoard .green_img,
+.clickBoard .blue_img,
+.clickBoard .yellow_img {
+  height: 80px;
+  width: 80px;
+}
+
+.task_count_thumb {
+  overflow: hidden;
+  position: relative;
+  border: var(--border);
+  border-width: 4px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 14px;
+}
+
+.task_green_count,
+.task_blue_count,
+.task_yellow_count {
+  padding-top: 6px;
+  z-index: 1;
+}

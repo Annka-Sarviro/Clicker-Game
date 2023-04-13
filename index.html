@@ -1,69 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clicker</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poison</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./normalize.css" />
     <link rel="stylesheet" href="./css/index.css" />
-    <link rel="icon" type="image/svg+xml" href="./img/favicon.png">
-</head>
-<body>
-    <header>
-        <div class="container container_header">
-            <div class="logo_thumb">
-                <span class="logo"></span>
-                <h1 class="logo_title">Magic Cristall</h1>
-            </div>
-
-            <div class="user">
-                <p >Hello, <span class="user_name"> </span> </p>
-            </div>
-            <button type="button" class="user_logOut is-hidden">LogOut</button>
+    <link rel="icon" type="image/svg+xml" href="./img/favicon.ico" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container container_header">
+        <div class="logo_thumb">
+          <span class="logo"></span>
+          <div class="logo_name">
+            <h1 class="logo_title">Poison</h1>
+            <p class="logo_subtitle">dangerous</p>
+          </div>
         </div>
+        <div class="user_thumb">
+          <div class="user">
+            <p>Hello, <span class="user_name"> </span></p>
+          </div>
+          <button type="button" class="button user_logOut is-hidden">LogOut</button>
+        </div>
+      </div>
     </header>
 
+    <main>
+      <div class="backdrop is-hidden scoreModal_backdrop"></div>
+      <div class="backdrop is-hidden modalReg_backdrop"></div>
+      <div class="backdrop is-hidden finishGame_backdrop"></div>
 
-    <main><div class="container container_main">
-        <div class="backdrop is-hidden scoreModal_backdrop"></div>
-        <div class="backdrop is-hidden modalReg_backdrop"></div>
-        <div class="backdrop is-hidden finishGame_backdrop"></div>
-        
+      <div class="container container_main">
         <div class="levelTaskBoard">
-            <h2>You level <span class="levelTaskBoard_title-task">1</span>  task:</h2>
-            <ul class="levelTaskBoard_task">
-                <li class="levelTaskBoard_color levelTaskBoard_color_red">Red: </li>
-                <li class="levelTaskBoard_color levelTaskBoard_color_blue">Blue: </li>
-                <li class="levelTaskBoard_color levelTaskBoard_color_yellow">Yellow: </li>
-            </ul>
+          <h2 class="levelTaskBoard_title">
+            You level <span class="levelTaskBoard_title-task">1</span> task:
+          </h2>
+          <ul class="levelTaskBoard_task">
+            <li class="levelTaskBoard_color levelTaskBoard_color_task">
+              <div class="green_img"></div>
+              <span class="levelTaskBoard_color_green"></span>
+            </li>
+            <li class="levelTaskBoard_color levelTaskBoard_color_task">
+              <div class="blue_img"></div>
+              <span class="levelTaskBoard_color_blue"></span>
+            </li>
+            <li class="levelTaskBoard_color levelTaskBoard_color_task">
+              <div class="yellow_img"></div>
+              <span class="levelTaskBoard_color_yellow"></span>
+            </li>
+          </ul>
         </div>
         <div class="gameBoard">
-            <div class="levelImg">
-                <p class="level_task">Level 1</p>
-                <div class="task">
-                    <ul>
-                        <li class="task_red"> <span class="task_red_count">0</span>  red</li>
-                        <li class="task_blue"><span class="task_blue_count">0</span> blue</li>
-                        <li class="task_yellow"><span class="task_yellow_count">0</span> yellow</li>
-                    </ul>
-               
-            </div>
-                <button type="button" class="start_button">Start</button>
-                <button type="button" class="stop_button">Stop</button>
-            </div>
-            <div class="gameDesk"></div>
-            <div class="progressBar"></div>
-        </div>
-        <div class="scoreBoard">
-            <div class="scoreBoard_subitle">Time: <span class="scoreBoard_timer">0</span> </div>
-            <div class="scoreBoard_subitle">Total score: <span class="scoreBoard_score">0</span></div>
-        </div>
-    </div></main>
-    <footer><div class="container container_footer"></div>
-    
-    </footer>
-    <script src="./index.js" type="module"></script>
+          <div class="clickBoard">
+            <div class="level_thumb">
+              <p class="level_task">Level 1</p>
+              <div class="task">
+                <ul>
+                  <li class="task_color task_green">
+                    <div class="task_count_thumb">
+                      <span class="task_green_count">0</span>
+                      <div class="fill color_green_fill"></div>
+                    </div>
+                    <div class="green_img"></div>
+                  </li>
+                  <li class="task_color task_blue">
+                    <div class="task_count_thumb">
+                      <span class="task_blue_count">0</span>
+                      <div class="fill color_blue_fill"></div>
+                    </div>
+                    <div class="blue_img"></div>
+                  </li>
+                  <li class="task_color task_yellow">
+                    <div class="task_count_thumb">
+                      <span class="task_yellow_count">0</span>
+                      <div class="fill color_yellow_fill"></div>
+                    </div>
 
-</body>
+                    <div class="yellow_img"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="scoreBoard">
+              <div class="scoreBoard_subitle">Time: <span class="scoreBoard_timer">0</span></div>
+              <div class="scoreBoard_subitle">
+                Total score: <span class="scoreBoard_score">0</span>
+              </div>
+            </div>
+          </div>
+          <div class="gameDesk"></div>
+          <div class="progressBar"></div>
+          <div class="buttonBoard">
+            <button type="button" class="button start_button">Start</button>
+            <button type="button" class="button stop_button">Stop</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer><div class="container container_footer"></div></footer>
+    <script src="./index.js" type="module"></script>
+  </body>
 </html>
