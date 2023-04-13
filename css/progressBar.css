@@ -20,6 +20,7 @@
   bottom: 0;
   right: 0;
   width: 100%;
+  transition: height 1s ease;
 }
 
 .progress_green {

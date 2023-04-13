@@ -26,7 +26,7 @@ const regForm = `
                     <div  class="regModal_formfield">
                         <label >
                         Password:
-                        <input  class="input_password" type="password" name="password" placeholder="Your password" required>
+                        <input   class="input_password" type="password" name="password" placeholder="Your password" required >
                         </label>
                     </div>
                     

@@ -68,6 +68,7 @@ img {
   font-size: 28px;
   color: var(--text-color);
   cursor: pointer;
+  transition: background-color 1s ease, border-color 1s ease;
 }
 
 .button:hover,

@@ -20,13 +20,5 @@
   left: 0px;
   width: 0;
   height: 0;
-}
-
-.clikElem_green {
-}
-
-.clikElem_Blue {
-}
-
-.clikElem_Yellow {
+  transition: opacity 1s ease;
 }
