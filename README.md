@@ -26,8 +26,8 @@ The source code is [here](https://github.com/Annka-Sarviro/Clicker-Game-TechFabr
 Also, you can run the code locally. To do this, you need to have Node.js installed.
 After cloning the project locally, open the terminal and execute the following commands in sequence:
 
-    $ npm i              /* to install the dependencies required to run the files.
-    $ http-server        /* to run the local server on port 8080.
+    $ npm install --global http-server       /* to install the dependencies required to run the files.
+    $ http-server                            /* to run the local server on port 8080.
     
    The application will be available at http://localhost:8080
 .
