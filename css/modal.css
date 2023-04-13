@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--color-dark);
   opacity: 1;
   transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 11;
@@ -18,7 +18,6 @@
   visibility: visible;
 }
 
-
 /* ------------Modal---------------- */
 
 .modal {
@@ -26,9 +25,161 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) scale(1);
-
-  background-color: var(--color-light-s);
-  padding: 10px 9px;
-  border-radius: 9px;
+  background-color: var(--background_color);
+  padding: 60px 42px 52px 42px;
+  border-radius: var(--border-radius);
+  border: var(--border);
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  text-align: center;
+}
+
+.modal::before,
+.modal::after {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 60px;
+  height: 60px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.modal::before {
+  background-image: url('../img/green.svg');
+  width: 55px;
+  height: 55px;
+  bottom: 0;
+  left: 0;
+}
+
+.modal::after {
+  background-image: url('../img/blue.svg');
+  width: 62px;
+  height: 62px;
+  bottom: 0;
+  right: 0;
+}
+
+.modal_title {
+  font-weight: 800;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+.modal_subtitle {
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+.modal_text {
+  font-weight: 700;
+  font-size: 22px;
+}
+.modal_count {
+  margin-bottom: 16px;
+}
+
+.modal_time {
+  margin-bottom: 40px;
+}
+/* --------------ScoreModal------------- */
+
+.button_startLevel {
+  display: inline;
+}
+
+.modal.score_modal::before {
+  bottom: 294px;
+  left: 280px;
+}
+
+.modal.score_modal::after {
+  bottom: 108px;
+  right: 272px;
+}
+
+.modal.finishGameModal::before {
+  background-image: url('../img/yellow.svg');
+  bottom: 149px;
+  left: 289px;
+  rotate: 304deg;
+}
+
+.modal.finishGameModal::after {
+  bottom: 290px;
+  right: 288px;
+}
+
+/* ------------------RegMoadal------------------ */
+.regModal_form {
+  margin-top: 34px;
+  width: 470px;
+}
+
+.regModal input {
+  background-color: var(--color-grey);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 11px 14px;
+  margin-right: auto;
+}
+
+.regModal label {
+  width: 40px;
+  font-weight: 700;
+  font-size: 22px;
+}
+.regModal_formfield:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.regModal input {
+  background-color: var(--color-grey);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 11px 14px;
+  width: 294px;
+}
+
+.regModal input[type='text'] {
+  margin-left: 71px;
+}
+
+.regModal input[type='email'] {
+  margin-left: 62px;
+}
+
+.regModal input[type='password'] {
+  margin-left: 32px;
+}
+
+.button_modal-submit {
+  display: inline-flex;
+  margin-top: 41px;
+}
+
+.regModal.modal_subtitle {
+  position: relative;
+}
+
+.regModal_subtitle::after {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 76px;
+  height: 90px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url('../img/logo.svg');
+  top: 18px;
+  right: 25px;
+}
+
+.modal.regModal::before {
+  bottom: 32px;
+  left: 80px;
+}
+
+.modal.regModal::after {
+  bottom: 63px;
+  right: 451px;
 }

@@ -5,26 +5,26 @@ import refs from './helpers/refs.js';
 const user = JSON.parse(localStorage?.getItem('user'));
 
 const regForm = `
-    <div class="modal">
-                <h2 class="modal_title">
+    <div class="modal regModal">
+                <h2 class="modal_subtitle regModal_subtitle">
                     WellCome!
                 </h2>
-                <h3>Please registry for playing</h3>
-                <form action="#" method="#" id="form">
-                    <div>
-                        <label>
+                <h3 class="modal_title">Please, registry for playing</h3>
+                <form class="regModal_form" id="form">
+                    <div  class="regModal_formfield">
+                        <label  >
                         Name:
-                        <input type="text" name="name" placeholder="Your name">
+                        <input  type="text" name="name" placeholder="Your name">
                         </label>
                     </div>
-                    <div>
-                        <label>
+                    <div  class="regModal_formfield">
+                        <label >
                         e-mail:
                         <input type="email" name="email" placeholder="Your e-mail" required>
                         </label>
                     </div>
-                    <div>
-                        <label>
+                    <div  class="regModal_formfield">
+                        <label >
                         Password:
                         <input type="password" name="password" placeholder="Your password" required>
                         </label>
@@ -71,6 +71,8 @@ function onRegFornSubmit(e) {
     userData.email.trim() === '' ||
     userData.password.trim() === ''
   ) {
+    // console.log(document.querySelector('input'));
+    // document.getElementsByName('e-mail').placeholder = 'enter';
     formFeel = false;
   }
 

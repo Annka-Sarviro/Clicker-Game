@@ -1,0 +1,17 @@
+/* --------------------------Footer------------------ */
+.footer {
+  padding-top: 60px;
+}
+
+.footer_title {
+  text-align: right;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.footer_link {
+  font-family: 'Chilanka';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+}

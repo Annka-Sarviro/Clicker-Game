@@ -3,10 +3,14 @@ import finishGameModal from './finishGameModal.js';
 function scoreModal(startShowElem, currLevel, score, timeFinish, totalTime, endGame) {
   const modal = `
     <div class="backdrop scoreModal">
-        <div class="modal">
-            <p>Level <span class="level_name">${currLevel - 1}</span> end</p>
-            <p>Your count: <span class="modal_count">${score}</span></p>
-            <p>Your time: <span class="modal_time">${timeFinish.toFixed(1)}</span> sec</p>
+        <div class="modal score_modal">
+            <p class="modal_title">Level <span class="level_name">${
+              currLevel - 1
+            }</span> complete</p>
+            <p class="modal_text modal_count">Your level score: <span class="modal_count">${score}</span></p>
+            <p class="modal_text modal_time">Your time: <span class="modal_time">${timeFinish.toFixed(
+              1
+            )}</span> sec</p>
             <button class="button button_startLevel" type="button">Start <span class="level_name">${currLevel}</span> level</button>
         </div>
         

@@ -64,6 +64,9 @@ img {
   background-color: var(--background_color);
   border: var(--border);
   border-radius: var(--border-radius);
+  font-weight: 800;
+  font-size: 28px;
+  color: var(--text-color);
 }
 
 .button:hover,
