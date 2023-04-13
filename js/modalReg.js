@@ -14,24 +14,27 @@ const regForm = `
                     <div  class="regModal_formfield">
                         <label  >
                         Name:
-                        <input  type="text" name="name" placeholder="Your name">
+                        <input class="input_name"   type="text" name="name" placeholder="Your name" required>
                         </label>
                     </div>
                     <div  class="regModal_formfield">
                         <label >
                         e-mail:
-                        <input type="email" name="email" placeholder="Your e-mail" required>
+                        <input class="input_email" type="email" name="email" placeholder="Your e-mail" required>
                         </label>
                     </div>
                     <div  class="regModal_formfield">
                         <label >
                         Password:
-                        <input type="password" name="password" placeholder="Your password" required>
+                        <input  class="input_password" type="password" name="password" placeholder="Your password" required>
                         </label>
                     </div>
                     
                     <div>
                         <button type="button" class="button button_modal-submit">Register</button>
+                    </div>
+                    <div class = "error_message is-hidden">
+                        Please, enter all fields
                     </div>
                 </form>`;
 
@@ -61,6 +64,7 @@ function onRegFornSubmit(e) {
     const { name } = field;
 
     if (name) {
+      document.querySelector('.error_message').classList.add('is-hidden');
       const { value } = field;
       userData[name] = value;
     }
@@ -71,8 +75,6 @@ function onRegFornSubmit(e) {
     userData.email.trim() === '' ||
     userData.password.trim() === ''
   ) {
-    // console.log(document.querySelector('input'));
-    // document.getElementsByName('e-mail').placeholder = 'enter';
     formFeel = false;
   }
 
@@ -88,7 +90,12 @@ function onRegFornSubmit(e) {
   ) {
     formFeel = true;
   }
+
+  if (!formFeel) {
+    document.querySelector('.error_message').classList.remove('is-hidden');
+  }
   if (formFeel) {
+    document.querySelector('.error_message').classList.add('is-hidden');
     refs.userName.textContent = `${userData.name}`;
     localStorage.setItem('user', JSON.stringify(userData));
     refs.userLogOut.classList.remove('is-hidden');

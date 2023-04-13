@@ -67,6 +67,7 @@ img {
   font-weight: 800;
   font-size: 28px;
   color: var(--text-color);
+  cursor: pointer;
 }
 
 .button:hover,

@@ -140,6 +140,10 @@
   width: 294px;
 }
 
+.regModal input:invalid:required {
+  background-color: #c5e5f1;
+}
+
 .regModal input[type='text'] {
   margin-left: 71px;
 }
@@ -154,7 +158,7 @@
 
 .button_modal-submit {
   display: inline-flex;
-  margin-top: 41px;
+  margin-bottom: 16px;
 }
 
 .regModal.modal_subtitle {
@@ -176,10 +180,10 @@
 
 .modal.regModal::before {
   bottom: 32px;
-  left: 80px;
+  left: 68px;
 }
 
 .modal.regModal::after {
   bottom: 63px;
-  right: 451px;
+  right: 465px;
 }
