@@ -95,11 +95,12 @@ function onRegFornSubmit(e) {
     document.querySelector('.error_message').classList.remove('is-hidden');
   }
   if (formFeel) {
-    document.querySelector('.error_message').classList.add('is-hidden');
     refs.userName.textContent = `${userData.name}`;
     localStorage.setItem('user', JSON.stringify(userData));
+    console.log('log');
     refs.userLogOut.classList.remove('is-hidden');
     modalClose(refs.modalRegBackdrop);
+    document.querySelector('.error_message').classList.add('is-hidden');
   }
 }
 

@@ -7,7 +7,6 @@ function showOn(elem, elemSize) {
   elem.style.height = `${elemSize}px`;
   elem.style.opacity = `1`;
   elem.style.rotate = `${Math.floor(Math.random() * 361)}deg`;
-  elem.style.transition = 'opacity 1s ease;';
 }
 
 export default showOn;

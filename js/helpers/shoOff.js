@@ -4,7 +4,6 @@ function showOff(elem) {
   elem.style.top = `0px`;
   elem.style.width = `0px`;
   elem.style.height = `0px`;
-  elem.style.transition = 'opacity 1s ease';
 }
 
 export default showOff;
