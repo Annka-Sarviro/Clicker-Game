@@ -83,24 +83,16 @@ function onRegFornSubmit(e) {
     formFeel = false;
   }
 
-  if (
-    userData.name.trim() === 'Test' &&
-    userData.email.trim() === 'test@email.com' &&
-    userData.password.trim() === 'test'
-  ) {
-    formFeel = true;
-  }
-
   if (!formFeel) {
     document.querySelector('.error_message').classList.remove('is-hidden');
   }
   if (formFeel) {
     refs.userName.textContent = `${userData.name}`;
     localStorage.setItem('user', JSON.stringify(userData));
-    console.log('log');
     refs.userLogOut.classList.remove('is-hidden');
     modalClose(refs.modalRegBackdrop);
     document.querySelector('.error_message').classList.add('is-hidden');
+    refs.userLogOut.addEventListener('click', onLogout);
   }
 }
 

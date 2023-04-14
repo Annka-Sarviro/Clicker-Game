@@ -1,5 +1,6 @@
 import refs from './helpers/refs.js';
 import finishGameModal from './finishGameModal.js';
+
 function scoreModal(startShowElem, currLevel, score, timeFinish, totalTime, endGame) {
   const modal = `
     <div class="backdrop scoreModal">

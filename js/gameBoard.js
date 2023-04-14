@@ -1,6 +1,5 @@
 import refs from './helpers/refs.js';
-import levelAllData from './helpers/levelData.js';
-import testlevelData from './helpers/testLevelData.js';
+import levelAllData from '../data/levelData.js';
 import getRandomInt from './helpers/random.js';
 import showOff from './helpers/shoOff.js';
 import showOn from './helpers/showOn.js';

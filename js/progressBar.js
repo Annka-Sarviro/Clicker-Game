@@ -2,10 +2,6 @@ import refs from './helpers/refs.js';
 import getCount from './helpers/getCount.js';
 
 function progress(levelCurrData) {
-  let clickGreen = 0;
-  let clickBlue = 0;
-  let clickYellow = 0;
-
   refs.gameDesk.addEventListener('click', onReRenderProgress);
 
   const list = `
@@ -31,9 +27,6 @@ function progress(levelCurrData) {
   renderList();
 
   function onReRenderProgress(e) {
-    // document.querySelector('.blue_img.endProgress_img').classList.add('is-hidden');
-    // document.querySelector('.green_img.endProgress_img').classList.add('is-hidden');
-    // document.querySelector('.yellow_img.endProgress_img').classList.add('is-hidden');
     let progressHight = document.querySelector('.progress').offsetHeight;
     let percentGreen = progressHight / levelCurrData.greenCountFinish;
     let percentBlue = progressHight / levelCurrData.blueCountFinish;
