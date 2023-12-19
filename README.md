@@ -10,7 +10,7 @@ You can track your progress in the **Progress bar**.
 You can also see the **time** spent on the current level and the **total amount** of points.
 To start the game, simply press the **start** button.
 You can also press the **stop** button to finish the game.
-[Click](https://annka-sarviro.github.io/Clicker-Game-TechFabric/) and **let's go**!
+[Click](https://annka-sarviro.github.io/Clicker-Game/) and **let's go**!
 
 ## Create files and folders
 
@@ -21,8 +21,8 @@ The file explorer is accessible using the button in left corner of the navigatio
 #### Information for developers
 
 This project is implemented using only CSS and HTML.
-Deployed to [GitHubPage](https://annka-sarviro.github.io/Clicker-Game-TechFabric/)
-The source code is [here](https://github.com/Annka-Sarviro/Clicker-Game-TechFabric)
+Deployed to [GitHubPage](https://annka-sarviro.github.io/Clicker-Game/)
+The source code is [here](https://github.com/Annka-Sarviro/Clicker-Game/)
 Also, you can run the code locally. To do this, you need to have Node.js installed.
 After cloning the project locally, open the terminal and execute the following commands in sequence:
 
