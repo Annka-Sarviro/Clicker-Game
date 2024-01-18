@@ -1,8 +1,9 @@
-[![imageup.ru](https://imageup.ru/img219/4292346/resurs-2.png)](https://imageup.ru/img219/4292346/resurs-2.png.html) 
+<img src="img/logo.svg" width="300">
+
 # Welcome to Poison *dangerous* game!
 In this game, you need to collect all the necessary ingredients and prepare a poisonous potion!
 
-## Rules                      [![imageup.ru](https://imageup.ru/img235/4292350/resurs-4.png)](https://imageup.ru/img235/4292350/resurs-4.png.html)
+## Rules                      <img src="img/green.svg" width="100">
 
 Minimal required amount of ingredients for each level is indicated in **Level  task menu**.
 For each ingredient, you will receive one point. More clicks - more points.
@@ -39,4 +40,5 @@ After cloning the project locally, open the terminal and execute the following c
  - Game with 5 level. Each level has its own task.
  - Total time and total score calculation.
 
-[![imageup.ru](https://imageup.ru/img58/4292351/resurs-43x.png)](https://imageup.ru/img58/4ф292351/resurs-43x.png.html)
+ <img src="img/yellow.svg" width="200">
+
